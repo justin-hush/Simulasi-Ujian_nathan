@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Ujian (SD, SMP, SMA) BY Nathan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="setup-screen">
+            <h1>Simulasi Ujian AI By Nathan</h1>
+            <p class="subtitle">Soal digenerate otomatis menggunakan Gemini AI secara real-time</p>
+            
+            <div class="form-group">
+                <label for="api-key">Gemini API Key:</label>
+                <input type="password" id="api-key" placeholder="Masukkan API key Anda" required>
+            </div>
+            <div class="form-group">
+                <label for="student-name">Nama Peserta Ujian:</label>
+                <input type="text" id="student-name" placeholder="Nama Anda" required>
+            </div>
+            <div class="form-group">
+                <label for="grade">Jenjang Pendidikan:</label>
+                <select id="grade">
+                    <option value="SD">SD</option>
+                    <option value="SMP">SMP</option>
+                    <option value="SMA">SMA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="class-select">Kelas:</label>
+                <select id="class-select">
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="subject">Mata Pelajaran:</label>
+                <select id="subject">
+                    <option value="Matematika">Matematika</option>
+                    <option value="IPA">IPA</option>
+                    <option value="IPS">IPS</option>
+                    <option value="PAIBP">PAIBP (Islam)</option>
+                    <option value="PAK">PAK (Kristen)</option>
+                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                    <option value="Bahasa Inggris">Bahasa Inggris</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="semester">Semester:</label>
+                <select id="semester">
+                    <option value="1">Semester 1 (Ganjil)</option>
+                    <option value="2">Semester 2 (Genap)</option>
+                </select>
+            </div>
+            <button id="start-btn">Mulai Ujian</button>
+        </div>
+
+        <div id="loading-screen" class="hidden">
+            <h2>Membuat Soal Ujian...</h2>
+            <p class="loading-text">Gemini sedang meracik soal terbaik untukmu.</p>
+            <div class="spinner"></div>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <h2 id="quiz-title">Ujian Sedang Berlangsung</h2>
+            <p id="quiz-meta"></p>
+            <form id="quiz-form">
+                <div id="questions-container"></div>
+                <button type="submit">Kirim Jawaban</button>
+            </form>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <div class="result-box">
+                <h2>Hasil Ujian Berhasil Disimpan!</h2>
+                <div class="result-details">
+                    <p>Nama: <strong id="res-name"></strong></p>
+                    <p>Ujian: <strong id="res-meta"></strong></p>
+                </div>
+                <div class="score-container">
+                    <div class="score" id="res-score">0</div>
+                    <p>Nilai Akhir</p>
+                </div>
+                <p id="res-message"></p>
+                <button id="restart-btn">Ujian Baru</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

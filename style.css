@@ -1,0 +1,219 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --bg-color: #f5f7fa;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --text-muted: #718096;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 650px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+.subtitle, .loading-text {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Quiz Styles */
+#quiz-meta {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.question-card {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.question-text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-label:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.option-label input {
+    width: auto;
+    margin-right: 12px;
+    accent-color: var(--primary-color);
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.05);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border-left-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin: 30px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Result Styles */
+.result-box {
+    text-align: center;
+}
+
+.result-details {
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.result-details p {
+    margin-bottom: 8px;
+}
+
+.result-details p:last-child {
+    margin-bottom: 0;
+}
+
+.score-container {
+    margin: 30px 0;
+}
+
+.score {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--success-color);
+    line-height: 1;
+}
+
+.score-container p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+#res-message {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
